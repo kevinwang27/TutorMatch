@@ -18,7 +18,6 @@
   "homepage": "https://github.com/kevinwang27/TutorMatch#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mongoose": "^5.3.9"
+    "express": "^4.16.4"
   }
 }
