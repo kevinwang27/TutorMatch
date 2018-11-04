@@ -10,7 +10,7 @@ const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 if (stitchClient.auth.isLoggedIn) {
   document.location.href="home.html";
 }
-s
+
 async function handleSignup() {
     const arg = getSignupFormInfo();
     stitchClient.callFunction("addUser", arg);
@@ -35,30 +35,43 @@ async function emailPasswordAuth(email, password) {
 /* UI Management Functions */
 function getSignupFormInfo() {
   const nameEl = document.getElementById("name");
-  const typeEl = document.getElementById("type");
   const emailEl = document.getElementById("email");
   const passwordEl = document.getElementById("password");
-  const dayEl = document.getElementById("day");
   const tuteeClassesEl = document.getElementById("tuteeClasses");
   const tutorClassesEl = document.getElementById("tutorClasses");
   const tuteePriceEl = document.getElementById("tuteePrice");
   const tutorPriceEl = document.getElementById("tutorPrice");
   // Parse out input text
   const name = nameEl.value;
-  const type = typeEl.value;
+
+  var type = null; 
+  var inputElements = document.getElementsByClassName('vehicle');
+  for(var i=0; inputElements[i]; ++i){
+        if(inputElements[i].checked){
+            type = inputElements[i].value;
+            break;
+        }
+  }
+
+  var day = null; 
+  var inputs = document.getElementsByClassName('daycheck');
+  for(var i=0; inputs[i]; ++i){
+        if(inputs[i].checked){
+            day = inputs[i].value;
+            break;
+        }
+  }
+
   const email = emailEl.value;
   const password = passwordEl.value;
-  const day = dayEl.value.split(', ');
   const tuteeClasses = tuteeClassesEl.value.split(', ');
   const tutorClasses = tutorClassesEl.value.split(', ');
-  const tuteePrice = tuteePriceEl.value.split(', ');
-  const tutorPrice = tutorPriceEl.value.split(', ');
+  const tuteePrice = tuteePriceEl.value;
+  const tutorPrice = tutorPriceEl.value;
   // Remove text from login boxes
   nameEl.value = "";
   emailEl.value = "";
-  typeEl.value = "";
   passwordEl.value = "";
-  dayEl.value = "";
   tuteeClassesEl.value = "";
   tutorClassesEl.value = "";
   tuteePriceEl.value = "";
