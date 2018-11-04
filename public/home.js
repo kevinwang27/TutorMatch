@@ -9,7 +9,7 @@ const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
     stitchClient.callFunction("getUserFromId", [stitchClient.auth.user.id]).then(result => {
-        build(result);
+        build(result[0]);
     });
 } else {
     document.location.href="index.html";
