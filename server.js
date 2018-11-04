@@ -1,18 +1,18 @@
 var express = require('express');
 var app = express();
-app.set('view engine', 'pug');
+var mongoose = require('mongoose');
+var User = require('./api/models/model');
+var bodyParser = require('body-parser');
 
-app.get('/', function(req, res) {
-    res.redirect('https://placeholder.com/login');
-});
+// mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/tutorDB'); 
 
-app.get('/login', function(req, res) {
-    res.render('login');
-});
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.get('/home', function(req, res) {
-    res.render('home');
-});
+var routes = require('./api/routes/routes'); //importing routes
+routes(app); //register the route
 
 app.listen(3000);
 console.log('launched');

@@ -11,8 +11,7 @@ const {
 const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
-  //TODO: redirect to dashboard page
-  window.location = "https://placeholder.com";
+  window.location = "https://placeholder.com/home";
 }
 
 async function handleLogin() {
@@ -26,8 +25,7 @@ async function emailPasswordAuth(email, password) {
     const credential = new UserPasswordCredential(email, password);
     await stitchClient.auth.loginWithCredential(credential);
   }
-  //TODO: redirect to dashboard page
-  window.location = "https://placeholder.com";
+  window.location = "https://placeholder.com/home";
 }
 
 async function handleSignup() {
