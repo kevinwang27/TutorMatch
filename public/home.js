@@ -31,14 +31,22 @@ function build() {
     var tutors;
     var tutees;
     if (userObj.type === "tutee") {
-        tutors = getTutors();
+        stitchClient.callFunction("getTutors", userObj).then(result => {
+            tutors = result;
+        });
         populateCards(tutors, "tutor");
     } else if (userObj.type === "tutor") {
-        tutees = getTutees();
+        stitchClient.callFunction("getTutees", userObj).then(result => {
+            tutees = result;
+        });
         populateCards(tutees, "tutee");
     } else {
-        tutors = getTutors();
-        tutees = getTutees();
+        stitchClient.callFunction("getTutors", userObj).then(result => {
+            tutors = result;
+        });
+        stitchClient.callFunction("getTutees", userObj).then(result => {
+            tutees = result;
+        });
         populateCards(tutors.concat(tutees), "both");
     }
 }
