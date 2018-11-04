@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/profile.css">
 </head>
 <body>
 	<!DOCTYPE HTML>
@@ -23,32 +23,99 @@
 				<a href = "#profile">View My Profile/Login</a>
 			</span>
 		</div>
-		<span id="title">Tutor Match</span>
-
-		<img src="imgs/Shelter.jpg" alt="profilepic" id = "profilepic">
+        <div id = "search">
+        <input type="text" placeholder="Search For Tutor/Tutee or Course">
+        <input type="submit" value="Submit" style = "margin-left: -7px;">
+         </div>
 	</div>
 	<div id = "profile">
 
 	</div>
 
-	
+	<div class="content">
+                <div class="info-box-container">
 
-
-
-
-
-	<div class = "Form">
-		<form id = "form">
-		  Email:<br>
-		  <input type="text" email="email"><br>
-		  	Password:<br>
-		  <input type="text" password="password"> <br> <br>
-		  <button class = "submit">
-		 	<p id = "sub" style = "margin-left: -20px;">Submit</p>
-		  </button>
-		</form>
-	</div>
-
+                    <script>
+                        var toAdd = document.createDocumentFragment();
+                        for(var i=0; i < 11; i++){
+                           var newDiv = document.createElement('div');
+                           newDiv.Name = document.createTextNode('name');
+                           newDiv.Email = document.createTextNode('email');
+                           newDiv.Courses = document.createTextNode('courses');
+                           newDiv.Tutoring = document.createTextNode('tutoring');
+                           newDiv.Availability = document.createTextNode('availability');
+                           newDiv.className = 'info-box';
+                           toAdd.appendChild(newDiv);
+                        }
+                        document.appendChild(toAdd);
+                    </script>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    <div class="info-box">
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <p>Courses:</p>
+                            <p>Tutoring:</p>
+                            <p>Availability:</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
 	
 </body>
 </html>
