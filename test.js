@@ -1,6 +1,6 @@
-const client = stitch.Stitch.initializeDefaultAppClient('tutormatch-fxrqk');
+const loginForm = document.getElementById("login-form");
 
-const APP_ID = "<YOUR APP ID>";
+const APP_ID = "tutormatch-fxrqk";
 const {
   Stitch,
   UserPasswordCredential,
