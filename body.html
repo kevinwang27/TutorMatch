@@ -7,16 +7,29 @@
 </head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-<input id="data" size="30">
-<button id="btn">Click</button>
+<h1>Sign Up</h1>
+<p> Name:
+    <input id="name" size="30">
+</p>
+<p> Email:
+    <input id="email" size="30">
+</p>
+<p> Graduation year:
+    <input id="year" size="30">
+</p>
+<p> Password:
+    <input id="pwd" size="30">
+</p>
+<p> <button id="btn">Click</button>
 
 <script>
 
 function clicked() {
-	var input_value = document.getElementById('data').value;
-	console.log(input_value);
+	var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var year = document.getElementById('year').value;
+    var password = document.getElementById('pwd').value;
+	console.log(name + ", " + email + ", " + year + ", " + password + "\n");
 }
 
 document.getElementById('btn').addEventListener('click', clicked);
