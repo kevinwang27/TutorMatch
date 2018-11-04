@@ -19,6 +19,7 @@
   "homepage": "https://github.com/kevinwang27/TutorMatch#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "mongodb-stitch-browser-sdk": "^4.0.14"
+    "mongodb-stitch-browser-sdk": "^4.0.14",
+    "node-fetch": "^2.2.0"
   }
 }

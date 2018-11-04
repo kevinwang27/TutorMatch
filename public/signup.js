@@ -1,4 +1,6 @@
 document.getElementById('signupbut').addEventListener('click', handleSignup);
+const fetch = require('node-fetch');
+const addUserWH = "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/tutormatch-fxrqk/service/TutorAPI/incoming_webhook/addUser?secret=calhacks5.0";
 
 const APP_ID = "tutormatch-fxrqk";
 const {
@@ -13,7 +15,12 @@ if (stitchClient.auth.isLoggedIn) {
 
 async function handleSignup() {
     const arg = getSignupFormInfo();
-    stitchClient.callFunction("addUser", arg);
+    fetch(addUserWH, {
+        method: "POST",
+        mode: "CORS",
+        // The webhook handler expects the body to be stringified JSON
+        body: JSON.stringify(arg)
+    });
     handleLogin();
 }
 
