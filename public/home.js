@@ -8,8 +8,8 @@ const {
 const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
-    stitchClient.callFunction("getUserFromId", [stitchClient.auth.user.id]).then(result => {
-        build(EJSON.parse(result[0]));
+    stitchClient.callFunction("getUserFromId", ["5bdf08f21c9d440000d2f9e3"]).then(result => {
+        build(JSON.parse(result[0]));
     });
 } else {
     document.location.href="index.html";
@@ -48,7 +48,7 @@ function populateCards(arr, type) {
     console.log("hi")
     var i;
     for (i = 0; i < arr.length; i++) {
-        arr[i] = EJSON.parse(arr[i]);
+        arr[i] = JSON.parse(arr[i]);
         var infoBox = document.createElement("div");
         infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Name: " + arr[i].name)));
         if (type === "tutor" || type === "both") {
