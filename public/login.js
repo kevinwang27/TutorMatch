@@ -29,7 +29,7 @@ async function emailPasswordAuth(email, password) {
 }
 
 async function handleSignup() {
-  
+  document.location.href="signup.html";
 }
 
 /* UI Management Functions */
