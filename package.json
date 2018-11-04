@@ -18,21 +18,7 @@
   },
   "homepage": "https://github.com/kevinwang27/TutorMatch#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "express": "^4.16.4",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "mongoose": "^5.3.9",
-    "pug": "^2.0.3"
-=======
     "mongodb-stitch-browser-sdk": "^4.0.14"
->>>>>>> d9374c9a3e7d4e5111e95200d2f4981ff238b424
-=======
-    "mongodb-stitch-browser-sdk": "^4.0.14",
-    "mongoose": "^5.3.9"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.5"
->>>>>>> 7e905b9b056ce257fb9f2806e342e9dcf5bb04c4
   }
 }
