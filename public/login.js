@@ -29,7 +29,7 @@ async function emailPasswordAuth(email, password) {
 }
 
 async function handleSignup() {
-  console.log("clicked");
+  
 }
 
 /* UI Management Functions */
