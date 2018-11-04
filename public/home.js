@@ -30,17 +30,29 @@ function build() {
     var tutees;
     if (userObj.type === "tutee") {
         tutors = getTutors();
-        populateCards(tutors);
+        populateCards(tutors, "tutor");
     } else if (userObj.type === "tutor") {
         tutees = getTutees();
-        populateCards(tutees);
+        populateCards(tutees, "tutee");
     } else {
         tutors = getTutors();
         tutees = getTutees();
-        populateCards(tutors.concat(tutees));
+        populateCards(tutors.concat(tutees), "both");
     }
 }
 
-function populateCards(arr) {
-    
+function populateCards(arr, type) {
+    var i;
+    var person;
+    for (i = 0; i < arr.length; i++) {
+        if (type === "tutor" || type === "both") {
+            person = document.createTextNode("Name: " + arr.name + "\nClasses: " + arr.tutorClasses + "\nAvailabilities: "
+                                            + arr.day + "\nPrice: " + arr.tutorPrice + "\nEmail: " + arr.email);
+        }
+        if (type === "tutee" || type === "both") {
+            person = document.createTextNode("Name: " + arr.name + "\nClasses: " + arr.tuteeClasses + "\nAvailabilities: "
+                                            + arr.day + "\nPrice: " + arr.tuteePrice + "\nEmail: " + arr.email);
+        }
+        document.getElementById("myList").appendChild(person);
+    }
 }
