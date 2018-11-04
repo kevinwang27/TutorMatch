@@ -28,17 +28,17 @@ function getTutees(userObj) {
 
 function build(userObj) {
     if (userObj.type === "tutee") {
-        stitchClient.callFunction("getTutors", userObj).then(result => {
+        stitchClient.callFunction("getTutors", [userObj]).then(result => {
             populateCards(result, "tutor");
         });
-        
+
     } else if (userObj.type === "tutor") {
-        stitchClient.callFunction("getTutees", userObj).then(result => {
+        stitchClient.callFunction("getTutees", [userObj]).then(result => {
             populateCards(result, "tutee");
         });
-        
+
     } else {
-        stitchClient.callFunction("getTutors", userObj).then(result => {
+        stitchClient.callFunction("getTutors", [userObj]).then(result => {
             populateCards(result, "both");
         });
     }
