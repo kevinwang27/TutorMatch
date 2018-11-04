@@ -25,7 +25,7 @@ async function emailPasswordAuth(email, password) {
     const credential = new UserPasswordCredential(email, password);
     await stitchClient.auth.loginWithCredential(credential);
   }
-  window.location = "https://placeholder.com/home";
+  fwindow.location = "https://placeholder.com/home";
 }
 
 async function handleSignup() {
