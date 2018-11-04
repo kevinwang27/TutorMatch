@@ -11,7 +11,7 @@ const {
 const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
-  window.location = "https://placeholder.com/home";
+  document.location.href="home.html";
 }
 
 async function handleLogin() {
@@ -25,11 +25,11 @@ async function emailPasswordAuth(email, password) {
     const credential = new UserPasswordCredential(email, password);
     await stitchClient.auth.loginWithCredential(credential);
   }
-  fwindow.location = "https://placeholder.com/home";
+  document.location.href="home.html";
 }
 
 async function handleSignup() {
-  console.log("clicked");
+  document.location.href="signup.html";
 }
 
 /* UI Management Functions */
