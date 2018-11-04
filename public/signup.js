@@ -3,11 +3,7 @@ const fetch = require('node-fetch');
 const addUserWH = "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/tutormatch-fxrqk/service/TutorAPI/incoming_webhook/addUser?secret=calhacks5.0";
 
 const APP_ID = "tutormatch-fxrqk";
-const {
-  Stitch,
-  UserPasswordCredential,
-} = stitch;
-const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
+const stitchClient = stitch.Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
   document.location.href="home.html";
