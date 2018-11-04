@@ -36,11 +36,11 @@ async function emailPasswordAuth(email, password) {
 function getSignupFormInfo() {
   const nameEl = document.getElementById("name");
   const emailEl = document.getElementById("email");
-  const passwordEl = document.getElementById("password");
-  const tuteeClassesEl = document.getElementById("tuteeClasses");
-  const tutorClassesEl = document.getElementById("tutorClasses");
-  const tuteePriceEl = document.getElementById("tuteePrice");
-  const tutorPriceEl = document.getElementById("tutorPrice");
+  const passwordEl = document.getElementById("pass");
+  const tuteeClassesEl = document.getElementById("tuteeclasses");
+  const tutorClassesEl = document.getElementById("tutorclasses");
+  const tuteePriceEl = document.getElementById("tuteeprice");
+  const tutorPriceEl = document.getElementById("tutorprice");
   // Parse out input text
   const name = nameEl.value;
 
