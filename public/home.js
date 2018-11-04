@@ -35,7 +35,7 @@ function build() {
         tutees = getTutees();
         populateCards(tutees, "tutee");
     } else {
-        tutors = getTutors();
+        tutors = getTutors();h
         tutees = getTutees();
         populateCards(tutors.concat(tutees), "both");
     }
