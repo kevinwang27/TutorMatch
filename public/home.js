@@ -1,11 +1,7 @@
 // document.getElementById('searchbtn').addEventListener('click', handleSearch);
 
 const APP_ID = "tutormatch-fxrqk";
-const {
-  Stitch,
-  UserPasswordCredential,
-} = stitch;
-const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
+const stitchClient = stitch.Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
     stitchClient.callFunction("getUserFromId", ["5bdf08f21c9d440000d2f9e3"]).then(result => {
