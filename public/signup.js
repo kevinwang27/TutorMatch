@@ -83,7 +83,7 @@ function getSignupFormInfo() {
   tutorClassesEl.value = "";
   tuteePriceEl.value = "";
   tutorPriceEl.value = "";
-  var karg = { name: name, type: type, email: email, password: password, day: day, tuteeClasses: tuteeClasses, tutorClasses: tutorClasses, tuteePrice: tuteePrice, tutorPrice: tutorPrice };
+  var karg = { name: name, type: type, email: email, password: password, day: day, tuteeClasses: tuteeClasses, tutorClasses: tutorClasses, tuteePrice: tuteePrice, tutorPrice: tutorPrice, userId: stitchClient.auth.user.id};
   console.log(karg);
   return karg;
 }
