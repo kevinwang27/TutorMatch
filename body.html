@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<h1>Sign Up</h1>
+<p> Name:
+    <input id="name" size="30">
+</p>
+<p> Email:
+    <input id="email" size="30">
+</p>
+<p> Graduation year:
+    <input id="year" size="30">
+</p>
+<p> Password:
+    <input id="pwd" size="30">
+</p>
+<p> <button id="btn">Click</button>
+
+<script>
+
+
+const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('tutorDB');
+
+function clicked() {
+	var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var year = document.getElementById('year').value;
+    var password = document.getElementById('pwd').value;
+	console.log(name + ", " + email + ", " + year + ", " + password + "\n");
+
+	client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user => 
+	db.collection('users').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
+	).then(() => 
+	db.collection('users').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
+	).then(docs => {
+	console.log("Found docs", docs)
+	console.log("[MongoDB Stitch] Connected to Stitch")
+	}).catch(err => {
+	console.error(err)
+	});
+}
+
+document.getElementById('btn').addEventListener('click', clicked);
+</script>
+</body>
+</html>
