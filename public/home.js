@@ -8,37 +8,33 @@ const {
 const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
-    var userObj = getUserObj();
-    build(userObj);
+    stitchClient.callFunction("getUserFromId", [stitchClient.auth.user.id]).then(result => {
+        build(result);
+    });
 } else {
-    window.location = "www.placeholder.com/login";
+    document.location.href="index.html";
 }
 
 async function getUserObj() {
     return stitchClient.callFunction("getUserFromId", stitchClient.auth.user.id)[0];
 }
 
-function getTutors(userObj) {
-    return stitchClient.callFunction("getTutors", userObj);
-}
-
-function getTutees(userObj) {
-    return stitchClient.callFunction("getTutees", userObj);
-}
-
 function build(userObj) {
     if (userObj.type === "tutee") {
         stitchClient.callFunction("getTutors", [userObj]).then(result => {
+            console.log(result);
             populateCards(result, "tutor");
         });
 
     } else if (userObj.type === "tutor") {
         stitchClient.callFunction("getTutees", [userObj]).then(result => {
+            console.log(result);
             populateCards(result, "tutee");
         });
 
     } else {
         stitchClient.callFunction("getTutors", [userObj]).then(result => {
+            console.log(result);
             populateCards(result, "both");
         });
     }
