@@ -29,7 +29,7 @@ async function emailPasswordAuth(email, password) {
 }
 
 async function handleSignup() {
-    window.location = "signuppage.com"
+  console.log("clicked");
 }
 
 /* UI Management Functions */
