@@ -6,7 +6,7 @@ const stitchClient = stitch.Stitch.initializeDefaultAppClient(APP_ID);
 if (stitchClient.auth.isLoggedIn) {
     stitchClient.callFunction("getUserFromId", ["5bdf08f21c9d440000d2f9e3"]).then(result => {
         console.log(result[0]);
-        build(result[0]);   
+        build(result[0]);
     });
 } else {
     document.location.href="index.html";
