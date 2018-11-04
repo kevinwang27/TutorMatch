@@ -1,4 +1,4 @@
-document.getElementById('searchbtn').addEventListener('click', handleSearch);
+// document.getElementById('searchbtn').addEventListener('click', handleSearch);
 
 const APP_ID = "tutormatch-fxrqk";
 const {
