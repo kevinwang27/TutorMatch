@@ -8,37 +8,37 @@ const {
 const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
-    getUserObj();
-    build();
+    var userObj = getUserObj();
+    build(userObj);
 } else {
     window.location = "www.placeholder.com/login";
 }
 
-var userObj;
 async function getUserObj() {
-    userObj = stitchClient.callFunction("getUserFromId", stitchClient.auth.user.id)[0];
+    return stitchClient.callFunction("getUserFromId", stitchClient.auth.user.id)[0];
 }
 
-function getTutors() {
+function getTutors(userObj) {
     return stitchClient.callFunction("getTutors", userObj);
 }
 
-function getTutees() {
+function getTutees(userObj) {
     return stitchClient.callFunction("getTutees", userObj);
 }
 
-function build() {
+function build(userObj) {
     var tutors;
     var tutees;
     if (userObj.type === "tutee") {
-        tutors = getTutors();
+        tutors = getTutors(userObj);
         populateCards(tutors, "tutor");
     } else if (userObj.type === "tutor") {
-        tutees = getTutees();
+        tutees = getTutees(userObj);
         populateCards(tutees, "tutee");
     } else {
-        tutors = getTutors();
-        tutees = getTutees();
+        tutors = getTutors(userObj);
+        tutees = getTutees(userObj);
+        console.log("hi" + tutors);
         populateCards(tutors.concat(tutees), "both");
     }
 }
