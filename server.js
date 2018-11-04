@@ -1,12 +1,18 @@
 var express = require('express');
-var http = require('http');
 var app = express();
+app.set('view engine', 'pug');
 
-app.use(express.static(__dirname + '/public'));
-
-app.get('/about', function(req, res) {
-    res.('another');
+app.get('/', function(req, res) {
+    res.redirect('https://placeholder.com/login');
 });
 
-http.createServer(app).listen(3000);
+app.get('/login', function(req, res) {
+    res.render('login');
+});
+
+app.get('/home', function(req, res) {
+    res.render('home');
+});
+
+app.listen(3000);
 console.log('launched');
