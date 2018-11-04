@@ -27,26 +27,20 @@ function getTutees(userObj) {
 }
 
 function build(userObj) {
-    var tutors;
-    var tutees;
     if (userObj.type === "tutee") {
         stitchClient.callFunction("getTutors", userObj).then(result => {
-            tutors = result;
+            populateCards(result, "tutor");
         });
-        populateCards(tutors, "tutor");
+        
     } else if (userObj.type === "tutor") {
         stitchClient.callFunction("getTutees", userObj).then(result => {
-            tutees = result;
+            populateCards(result, "tutee");
         });
-        populateCards(tutees, "tutee");
+        
     } else {
         stitchClient.callFunction("getTutors", userObj).then(result => {
-            tutors = result;
+            populateCards(result, "both");
         });
-        stitchClient.callFunction("getTutees", userObj).then(result => {
-            tutees = result;
-        });
-        populateCards(tutors.concat(tutees), "both");
     }
 }
 
