@@ -1,5 +1,5 @@
-document.getElementById('btn').addEventListener('click', handleLogin);
-document.getElementById('btn').addEventListener('click', handleSignup);
+document.getElementById('loginbtn').addEventListener('click', handleLogin);
+document.getElementById('signupbtn').addEventListener('click', handleSignup);
 
 //const loginForm = document.getElementById("login-form");
 
@@ -15,7 +15,7 @@ if (stitchClient.auth.isLoggedIn) {
 }
 
 async function handleLogin() {
-  const { name, email, year, password } = getLoginFormInfo();
+  const { email, password } = getLoginFormInfo();
 
   await emailPasswordAuth(email, password);
 }
@@ -30,13 +30,14 @@ async function emailPasswordAuth(email, password) {
 }
 
 async function handleSignup() {
+    window.location = "signuppage.com"
     const { name, email, year, password } = getSignupFormInfo();
 }
 
 /* UI Management Functions */
 function getLoginFormInfo() {
   const emailEl = document.getElementById("email");
-  const passwordEl = document.getElementById("pwd");
+  const passwordEl = document.getElementById("password");
   // Parse out input text
   const email = emailEl.value;
   const password = passwordEl.value;
@@ -50,7 +51,7 @@ function getSignupFormInfo() {
   const nameEl = document.getElementById("name");
   const emailEl = document.getElementById("email");
   const yearEl = document.getElementById("year");
-  const passwordEl = document.getElementById("pwd");
+  const passwordEl = document.getElementById("password");
   // Parse out input text
   const name = nameEl.value;
   const email = emailEl.value;
