@@ -60,11 +60,11 @@ function getSignupFormInfo() {
         }
   }
 
-  var day = null; 
+  var day = []; 
   var inputs = document.getElementsByClassName('daycheck');
   for(var i=0; inputs[i]; ++i){
         if(inputs[i].checked){
-            day = inputs[i].value;
+            day.push(inputs[i].value);
             break;
         }
   }
