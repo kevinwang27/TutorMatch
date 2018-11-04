@@ -9,7 +9,7 @@ const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
     stitchClient.callFunction("getUserFromId", [stitchClient.auth.user.id]).then(result => {
-        build(result[0]);
+        build(JSON.parse(result[0]));
     });
 } else {
     document.location.href="index.html";
@@ -48,22 +48,23 @@ function populateCards(arr, type) {
     console.log("hi")
     var i;
     for (i = 0; i < arr.length; i++) {
+        arr[i] = JSON.parse(arr[i]);
         var infoBox = document.createElement("div");
-        infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Name: " + arr.name)));
+        infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Name: " + arr[i].name)));
         if (type === "tutor" || type === "both") {
-            var tutorClasses = document.createTextNode("Classes: " + arr.tutorClasses);
-            var tutorPrice = document.createTextNode("Price: " + arr.tutorPrice);
-            infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Tutoring classes: " + arr.tutorClasses)));
-            infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Asking rate per hour: " + arr.tutorPrice)));
+            var tutorClasses = document.createTextNode("Classes: " + arr[i].tutorClasses);
+            var tutorPrice = document.createTextNode("Price: " + arr[i].tutorPrice);
+            infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Tutoring classes: " + arr[i].tutorClasses)));
+            infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Asking rate per hour: " + arr[i].tutorPrice)));
         }
         if (type === "tutee" || type === "both") {
-            var tuteeClasses = document.createTextNode("Classes: " + arr.tuteeClasses);
-            var tuteePrice = document.createTextNode("Price: " + arr.tuteePrice);
-            infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Need tutoring in: " + arr.tuteeClasses)));
-            infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Willing to pay: " + arr.tuteePrice)));
+            var tuteeClasses = document.createTextNode("Classes: " + arr[i].tuteeClasses);
+            var tuteePrice = document.createTextNode("Price: " + arr[i].tuteePrice);
+            infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Need tutoring in: " + arr[i].tuteeClasses)));
+            infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Willing to pay: " + arr[i].tuteePrice)));
         }
-        infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Availability: " + arr.day)));
-        infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Contact: " + arr.email)));
+        infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Availability: " + arr[i].day)));
+        infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Contact: " + arr[i].email)));
         document.getElementById("info-box-container").appendChild(infoBox);
     }
 }
