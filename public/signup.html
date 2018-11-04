@@ -48,25 +48,25 @@
 
 					<div class="wrap-input validate-input">
 						<span class="label-input">Classes to be tutored in</span>
-						<input class="input" type="text" id="repeat-pass" placeholder="">
+						<input class="input" type="text" id="tuteeclasses" placeholder="">
 						<span class="focus-input"></span>
 					</div>
 
 					<div class="wrap-input validate-input">
 						<span class="label-input">Classes you can tutor</span>
-						<input class="input" type="text" id="repeat-pass" placeholder="">
+						<input class="input" type="text" id="tutorclasses" placeholder="">
 						<span class="focus-input"></span>
 					</div>
 
 					<div class="wrap-input validate-input" data-validate = "Your classes are required">
 						<span class="label-input">Max Price Willing to Pay (For tutees)</span>
-						<input class="input" type="text" id="repeat-pass" placeholder="">
+						<input class="input" type="text" id="tuteeprice" placeholder="">
 						<span class="focus-input"></span>
 					</div>
 
 					<div class="wrap-input validate-input" data-validate = "Your classes are required">
 						<span class="label-input">Min Price Willing to Receive (For tutors)</span>
-						<input class="input" type="text" id="repeat-pass" placeholder="">
+						<input class="input" type="text" id="tutorprice" placeholder="">
 						<span class="focus-input"></span>
 					</div>
 
@@ -79,28 +79,12 @@
 					  </div> -->
 
 					<form action="/action_page.php">
-						<input type="checkbox" id="vehicle1" value="Tutor"> I want to tutor<br>
-						<input type="checkbox" id="vehicle2" value="Tutored"> I want a tutor<br>
-						<input type="checkbox" id="vehicle3" value="Both" checked> I want both<br>
+						<input type="checkbox" class="vehicle" value="tutor"> I want to tutor<br>
+						<input type="checkbox" class="vehicle" value="tutee"> I want a tutor<br>
+						<input type="checkbox" class="vehicle" value="both" checked> I want both<br>
 						<br>
 					</form>
 
-					<!-- <form action="/action_page.php">
-						<input type="checkbox" name="vehicle1" value="Tutor"> I want to tutor<br>
-						<input type="checkbox" name="vehicle2" value="Tutored"> I want a tutor<br>
-						<input type="checkbox" name="vehicle3" value="Both" checked> I want both<br>
-						<br>
-					</form> -->
-
-					<!-- <fieldset data-role="controlgroup" data-type="horizontal">
-						<legend>Choose as many favorite colors as you'd like:</legend>
-						  <label for="red">Red</label>
-						  <input type="checkbox" name="favcolor" id="red" value="red">
-						  <label for="green">Green</label>
-						  <input type="checkbox" name="favcolor" id="green" value="green">
-						  <label for="blue">Blue</label>
-						  <input type="checkbox" name="favcolor" id="blue" value="blue">
-					  </fieldset> -->
 					<div class="asking-weekdays validate-input">
 						<label>
 							What days are you available?
@@ -111,31 +95,31 @@
 
 
 						<label>
-							<input type="checkbox" id="sun">
+							<input class="daycheck" type="checkbox" value="Sunday">
 							<div class="label">Sun</div>
 						</label>
 						<label>
-							<input type="checkbox" id="mon">
+							<input class="daycheck" type="checkbox" value="Monday">
 							<div class="label">Mon</div>
 						</label>
 						<label>
-							<input type="checkbox" id="tue">
+							<input class="daycheck" type="checkbox" value="Tuesday">
 							<div class="label">Tue</div>
 						</label>
 						<label>
-							<input type="checkbox" id="wed">
+							<input class="daycheck" type="checkbox" value="Wednesday">
 							<div class="label">Wed</div>
 						</label>
 						<label>
-							<input type="checkbox" id="thu">
+							<input class="daycheck" type="checkbox" value="Thursday">
 							<div class="label">Thu</div>
 						</label>
 						<label>
-							<input type="checkbox" id="fri">
+							<input class="daycheck" type="checkbox" value="Friday">
 							<div class="label">Fri</div>
 						</label>
 						<label>
-							<input type="checkbox" id="sat">
+							<input class="daycheck" type="checkbox" value="Saturday">
 							<div class="label">Sat</div>
 						</label>
 					</div>
@@ -145,7 +129,7 @@
 					<div class="container-login-form-btn">
 						<div class="wrap-login-form-btn">
 							<div class="login-form-bgbtn"></div>
-							<button class="login-form-btn">
+							<button class="login-form-btn" id="signupbut">
 								Sign Up
 							</button>
 						</div>
