@@ -1,2 +1,25 @@
+ <!DOCTYPE html>
+<html>
+<head>
+
 <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.8/stitch.js"></script>
-<script src="./test.js"></script>
+
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+<input id="data" size="30">
+<button id="btn">Click</button>
+
+<script>
+
+function clicked() {
+	var input_value = document.getElementById('data').value;
+	console.log(input_value);
+}
+
+document.getElementById('btn').addEventListener('click', clicked);
+</script>
+</body>
+</html>
