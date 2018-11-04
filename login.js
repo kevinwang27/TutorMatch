@@ -48,18 +48,33 @@ function getLoginFormInfo() {
 
 function getSignupFormInfo() {
   const nameEl = document.getElementById("name");
+  const typeEl = document.getElementById("type");
   const emailEl = document.getElementById("email");
-  const yearEl = document.getElementById("year");
   const passwordEl = document.getElementById("password");
+  const dayEl = document.getElementById("day");
+  const tuteeClassesEl = document.getElementById("tuteeClasses");
+  const tutorClassesEl = document.getElementById("tutorClasses");
+  const tuteePriceEl = document.getElementById("tuteePrice");
+  const tutorPriceEl = document.getElementById("tutorPrice");
   // Parse out input text
   const name = nameEl.value;
+  const type = typeEl.value;
   const email = emailEl.value;
-  const year = yearEl.value;
   const password = passwordEl.value;
+  const day = dayEl.value.split(', ');
+  const tuteeClasses = tuteeClassesEl.value.split(', ');
+  const tutorClasses = tutorClassesEl.value.split(', ');
+  const tuteePrice = tuteePriceEl.value.split(', ');
+  const tutorPrice = tutorPriceEl.value.split(', ');
   // Remove text from login boxes
   nameEl.value = "";
   emailEl.value = "";
-  yearEl.value = "";
+  typeEl.value = "";
   passwordEl.value = "";
-  return { name: name, email: email, year: year, password: password };
+  dayEl.value = "";
+  tuteeClassesEl.value = "";
+  tutorClassesEl.value = "";
+  tuteePriceEl.value = "";
+  tutorPriceEl.value = "";
+  return { name: name, type: type, email: email, password: password, day: day, tuteeClasses: tuteeClasses, tutorClasses: tutorClasses, tuteePrice: tuteePrice, tutorPrice: tutorPrice };
 }
