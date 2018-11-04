@@ -9,7 +9,7 @@ const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
     stitchClient.callFunction("getUserFromId", [stitchClient.auth.user.id]).then(result => {
-        build(JSON.parse(JSON.stringify(result[0])));
+        build(EJSON.parse(result[0]));
     });
 } else {
     document.location.href="index.html";
@@ -48,7 +48,7 @@ function populateCards(arr, type) {
     console.log("hi")
     var i;
     for (i = 0; i < arr.length; i++) {
-        arr[i] = JSON.parse(JSON.stringify(arr[i]));
+        arr[i] = EJSON.parse(arr[i]);
         var infoBox = document.createElement("div");
         infoBox.appendChild(document.createElement("p").appendChild(document.createTextNode("Name: " + arr[i].name)));
         if (type === "tutor" || type === "both") {
