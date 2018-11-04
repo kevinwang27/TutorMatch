@@ -7,3 +7,8 @@ const {
 } = stitch;
 const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
+if (stitchClient.auth.isLoggedIn) {
+  hideLoginForm();
+  revealDashboardContainer();
+  build(Date.now());
+}
