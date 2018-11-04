@@ -14,7 +14,7 @@ if (stitchClient.auth.isLoggedIn) {
 
 function build(userObj) {
     if (userObj.type === "tutee") {
-        stitchClient.callFunction("getTutors", [userObj]).then(result => {
+        stitch.defaultAppClient.callFunction("getTutors", [userObj]).then(result => {
             console.log(result);
             populateCards(result, "tutor");
         });
