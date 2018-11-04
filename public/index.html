@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.8/stitch.js"></script>
+
+</head>
+<body>
+
+<h1>Sign Up</h1>
+<p> Name:
+    <input id="name" size="30">
+</p>
+<p> Email:
+    <input id="email" size="30">
+</p>
+<p> Graduation year:
+    <input id="year" size="30">
+</p>
+<p> Password:
+    <input id="pwd" size="30">
+</p>
+<p> <button id="btn">Click</button>
+
+<script>
+
+function clicked() {
+	var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var year = document.getElementById('year').value;
+    var password = document.getElementById('pwd').value;
+	console.log(name + ", " + email + ", " + year + ", " + password + "\n");
+}
+
+document.getElementById('btn').addEventListener('click', clicked);
+</script>
+</body>
+</html>
