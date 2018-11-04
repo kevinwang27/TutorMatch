@@ -9,7 +9,7 @@
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #999999;">
-	
+
 	<div class="setbounds">
 		<div class="container-login">
 
@@ -21,13 +21,13 @@
 
 					<div class="wrap-input validate-input" data-validate="Name is required">
 						<span class="label-input">Full Name</span>
-						<input class="input" type="text" name="name" placeholder="Name">
+						<input class="input" type="text" id="name" placeholder="Name">
 						<span class="focus-input"></span>
 					</div>
 
 					<div class="wrap-input validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input">Email</span>
-						<input class="input" type="text" name="email" placeholder="Email address">
+						<input class="input" type="text" id="email" placeholder="Email address">
 						<span class="focus-input"></span>
 					</div>
 
@@ -39,33 +39,33 @@
 
 					<div class="wrap-input validate-input" data-validate = "Password is required">
 						<span class="label-input">Password</span>
-						<input class="input" type="text" name="pass" placeholder="********">
+						<input class="input" type="text" id="pass" placeholder="********">
 						<span class="focus-input"></span>
 					</div>
-					
-					
+
+
 
 					<div class="wrap-input validate-input">
 						<span class="label-input">Classes to be tutored in</span>
-						<input class="input" type="text" name="repeat-pass" placeholder="">
+						<input class="input" type="text" id="repeat-pass" placeholder="">
 						<span class="focus-input"></span>
 					</div>
 
 					<div class="wrap-input validate-input">
 						<span class="label-input">Classes you can tutor</span>
-						<input class="input" type="text" name="repeat-pass" placeholder="">
+						<input class="input" type="text" id="repeat-pass" placeholder="">
 						<span class="focus-input"></span>
 					</div>
 
 					<div class="wrap-input validate-input" data-validate = "Your classes are required">
 						<span class="label-input">Max Price Willing to Pay (For tutees)</span>
-						<input class="input" type="text" name="repeat-pass" placeholder="">
+						<input class="input" type="text" id="repeat-pass" placeholder="">
 						<span class="focus-input"></span>
 					</div>
 
 					<div class="wrap-input validate-input" data-validate = "Your classes are required">
 						<span class="label-input">Min Price Willing to Receive (For tutors)</span>
-						<input class="input" type="text" name="repeat-pass" placeholder="">
+						<input class="input" type="text" id="repeat-pass" placeholder="">
 						<span class="focus-input"></span>
 					</div>
 
@@ -78,9 +78,9 @@
 					  </div> -->
 
 					<form action="/action_page.php">
-						<input type="checkbox" name="vehicle1" value="Tutor"> I want to tutor<br>
-						<input type="checkbox" name="vehicle2" value="Tutored"> I want a tutor<br>
-						<input type="checkbox" name="vehicle3" value="Both" checked> I want both<br>
+						<input type="checkbox" id="vehicle1" value="Tutor"> I want to tutor<br>
+						<input type="checkbox" id="vehicle2" value="Tutored"> I want a tutor<br>
+						<input type="checkbox" id="vehicle3" value="Both" checked> I want both<br>
 						<br>
 					</form>
 
@@ -103,35 +103,39 @@
 					<div class="asking-weekdays validate-input">
 						<label>
 							What days are you available?
-						</label> 
+						</label>
 					</div>
 
 					<div class="weekdays validate-input">
-						
-						
+
+
 						<label>
-							<input type="checkbox">
-							<div class="label">Su</div>
+							<input type="checkbox" id="sun">
+							<div class="label">Sun</div>
 						</label>
 						<label>
-							<input type="checkbox">
-							<div class="label">Mo</div>
+							<input type="checkbox" id="mon">
+							<div class="label">Mon</div>
 						</label>
 						<label>
-							<input type="checkbox">
-							<div class="label">Tu</div>
+							<input type="checkbox" id="tue">
+							<div class="label">Tue</div>
 						</label>
 						<label>
-							<input type="checkbox">
-							<div class="label">We</div>
+							<input type="checkbox" id="wed">
+							<div class="label">Wed</div>
 						</label>
 						<label>
-							<input type="checkbox">
+							<input type="checkbox" id="thu">
 							<div class="label">Thu</div>
 						</label>
 						<label>
-							<input type="checkbox">
+							<input type="checkbox" id="fri">
 							<div class="label">Fri</div>
+						</label>
+						<label>
+							<input type="checkbox" id="sat">
+							<div class="label">Sat</div>
 						</label>
 					</div>
 
@@ -156,7 +160,7 @@
 
 		</div>
 	</div>
-	
+
 
 
 

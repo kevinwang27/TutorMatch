@@ -30,7 +30,6 @@ async function emailPasswordAuth(email, password) {
 
 async function handleSignup() {
     window.location = "signuppage.com"
-    const { name, email, year, password } = getSignupFormInfo();
 }
 
 /* UI Management Functions */
@@ -44,37 +43,4 @@ function getLoginFormInfo() {
   emailEl.value = "";
   passwordEl.value = "";
   return { email: email, password: password };
-}
-
-function getSignupFormInfo() {
-  const nameEl = document.getElementById("name");
-  const typeEl = document.getElementById("type");
-  const emailEl = document.getElementById("email");
-  const passwordEl = document.getElementById("password");
-  const dayEl = document.getElementById("day");
-  const tuteeClassesEl = document.getElementById("tuteeClasses");
-  const tutorClassesEl = document.getElementById("tutorClasses");
-  const tuteePriceEl = document.getElementById("tuteePrice");
-  const tutorPriceEl = document.getElementById("tutorPrice");
-  // Parse out input text
-  const name = nameEl.value;
-  const type = typeEl.value;
-  const email = emailEl.value;
-  const password = passwordEl.value;
-  const day = dayEl.value.split(', ');
-  const tuteeClasses = tuteeClassesEl.value.split(', ');
-  const tutorClasses = tutorClassesEl.value.split(', ');
-  const tuteePrice = tuteePriceEl.value.split(', ');
-  const tutorPrice = tutorPriceEl.value.split(', ');
-  // Remove text from login boxes
-  nameEl.value = "";
-  emailEl.value = "";
-  typeEl.value = "";
-  passwordEl.value = "";
-  dayEl.value = "";
-  tuteeClassesEl.value = "";
-  tutorClassesEl.value = "";
-  tuteePriceEl.value = "";
-  tutorPriceEl.value = "";
-  return { name: name, type: type, email: email, password: password, day: day, tuteeClasses: tuteeClasses, tutorClasses: tutorClasses, tuteePrice: tuteePrice, tutorPrice: tutorPrice };
 }
