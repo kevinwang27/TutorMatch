@@ -16,7 +16,8 @@ if (stitchClient.auth.isLoggedIn) {
 }
 
 async function handleLogin() {
-  const { email, password } = getLoginFormInfo();
+  const { name, email, year, password } = getLoginFormInfo();
+
   await emailPasswordAuth(email, password);
 }
 
