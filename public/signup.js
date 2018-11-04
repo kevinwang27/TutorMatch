@@ -1,4 +1,4 @@
-document.getElementById('login-form-btn').addEventListener('click', handleSignup);
+document.getElementById('signupbut').addEventListener('click', handleSignup);
 
 const APP_ID = "tutormatch-fxrqk";
 const {
