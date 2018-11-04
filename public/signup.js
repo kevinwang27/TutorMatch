@@ -8,7 +8,7 @@ const {
 const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
-  window.location = "https://placeholder.com/home";
+  document.location.href="home.html";
 }
 s
 async function handleSignup() {
@@ -18,7 +18,8 @@ async function handleSignup() {
 }
 
 async function handleLogin() {
-  const { email, password } = { arg.email, arg.password };
+  const email = arg.email;
+  const password = arg.password;
   await emailPasswordAuth(email, password);
 }
 
@@ -28,7 +29,7 @@ async function emailPasswordAuth(email, password) {
     const credential = new UserPasswordCredential(email, password);
     await stitchClient.auth.loginWithCredential(credential);
   }
-  fwindow.location = "https://placeholder.com/home";
+  document.location.href="home.html";
 }
 
 /* UI Management Functions */
