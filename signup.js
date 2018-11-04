@@ -10,7 +10,7 @@ const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 if (stitchClient.auth.isLoggedIn) {
   window.location = "https://placeholder.com/home";
 }
-
+s
 async function handleSignup() {
     const arg = getSignupFormInfo();
     stitchClient.callFunction("addUser", arg);
