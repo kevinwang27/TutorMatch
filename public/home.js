@@ -8,10 +8,7 @@ const {
 const stitchClient = Stitch.initializeDefaultAppClient(APP_ID);
 
 if (stitchClient.auth.isLoggedIn) {
-    var arr = [];
-    arr.push(stitchClient.auth.user.id);
-    stitchClient.callFunction("getUserFromId", arr).then(result => {
-        console.log(result[0]);
+    stitchClient.callFunction("getUserFromId", ["5bdf08f21c9d440000d2f9e3"]).then(result => {
         build(JSON.parse(result[0]));
     });
 } else {
